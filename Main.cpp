@@ -1,35 +1,48 @@
-#include "DungeonManager.h"
-#include "QueueManager.h"
-#include "PlayerQueue.h"
-
-int t1, t2;
+﻿#include "QueueManager.h"
+#include <iostream>
 
 int main() {
-    int n, t, h, d;
+    try {
+        std::cout << "Dungeon Queue Management System" << std::endl;
+        std::cout << "======================================" << std::endl;
 
-    // User input
-    std::cout << "Enter max concurrent instances (n): ";
-    std::cin >> n;
-    std::cout << "Enter number of tanks (t): ";
-    std::cin >> t;
-    std::cout << "Enter number of healers (h): ";
-    std::cin >> h;
-    std::cout << "Enter number of DPS (d): ";
-    std::cin >> d;
-    std::cout << "Enter min dungeon time (t1): ";
-    std::cin >> t1;
-    std::cout << "Enter max dungeon time (t2): ";
-    std::cin >> t2;
+        // Get user inputs
+        int n, t, h, d;
+        double t1, t2;
 
-    DungeonManager dungeonManager(n);
-    QueueManager queueManager(t, h, d, dungeonManager);
+        std::cout << "Maximum number of concurrent instances (n): ";
+        std::cin >> n;
 
-    queueManager.processQueue();
-    dungeonManager.printSummary();
+        std::cout << "Number of tank players in queue: ";
+        std::cin >> t;
 
-    std::cout << "\nPress ENTER to exit...";
-    std::cin.get();
-    std::cin.get();
+        std::cout << "Number of healer players in queue: ";
+        std::cin >> h;
+
+        std::cout << "Number of DPS players in queue: ";
+        std::cin >> d;
+
+        std::cout << "Minimum instance clear time (t1 seconds): ";
+        std::cin >> t1;
+
+        std::cout << "Maximum instance clear time (t2 seconds, <= 15): ";
+        std::cin >> t2;
+
+        // Validate inputs
+        if (n <= 0 || t < 0 || h < 0 || d < 0 || t1 < 0 || t2 < t1 || t2 > 15) {
+            std::cout << "Invalid input values. Please try again." << std::endl;
+            return 1;
+        }
+
+        // Create and start the queue manager
+        QueueManager manager(n, t, h, d, t1, t2);
+        manager.start();
+
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

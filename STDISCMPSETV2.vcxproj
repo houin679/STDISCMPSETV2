@@ -127,16 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DungeonManager.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="PlayerQueue.cpp" />
+    <ClCompile Include="DungeonInstance.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="QueueManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DungeonManager.h" />
-    <ClInclude Include="PlayerQueue.h" />
+    <ClInclude Include="DungeonInstance.h" />
     <ClInclude Include="QueueManager.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Party.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

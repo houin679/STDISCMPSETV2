@@ -15,30 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DungeonManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerQueue.cpp">
+    <ClCompile Include="DungeonInstance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="QueueManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DungeonManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerQueue.h">
+    <ClInclude Include="DungeonInstance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="QueueManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="Party.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
