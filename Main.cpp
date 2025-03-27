@@ -35,6 +35,7 @@ int main() {
         }
 
         // Create and start the queue manager
+
         QueueManager manager(n, t, h, d, t1, t2);
         manager.start();
 
