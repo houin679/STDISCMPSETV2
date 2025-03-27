@@ -52,6 +52,9 @@ public:
 
     // Start the queue management system
     void start();
+
+    mutable std::mutex instance_mutex;
+
 };
 
 
